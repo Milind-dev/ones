@@ -16,6 +16,7 @@ const names = async() => {
       {name.map((item,index)=>{
         return(
           <>
+          <p>he</p>
             <p key={index}>{item}</p>
           </>
         )
