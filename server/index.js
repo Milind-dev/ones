@@ -1,5 +1,5 @@
-import express from 'express';
-import db from './db/db';
+const express = require('express') ;
+const db =  require('./db.json');
 // Set up the express app
 const app = express();
 // get all todos
