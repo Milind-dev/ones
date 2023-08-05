@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {useState,useEffect} from "react"
 function App() {
+  const [name, setName] = useState([]);
+
+ useEffect( ()=> {
+  names();
+},[])
+
+const names = async() => {
+  const res = await fetch("https://ones-seven.vercel.app/");
+  setName(res);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {name.map((item,index)=>{
+        return(
+          <>
+            <p id="index">{item}</p>
+          </>
+        )
+      })}
     </div>
   );
 }
 
 export default App;
+
+
+
+
+// https://ones-seven.vercel.app/
